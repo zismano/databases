@@ -1,3 +1,4 @@
+var utils = require('./utils.js');
 var express = require('express');
 var db = require('./db');
 
@@ -28,5 +29,15 @@ app.use(express.static(__dirname + '/../client'));
 if (!module.parent) {
   app.listen(app.get('port'));
   console.log('Listening on', app.get('port'));
+  app.get('/', function(req, res) {
+    if (prefix === '/') {
+      console.log('Serving request type ' + req.method + ' for url ' + req.url);
+      utils.sendResponse(res, {message: response});
+      console.log(response);    
+    }
+
+// upload index html
+// 
+  });
 }
 
