@@ -1,5 +1,5 @@
-var Sequelize = require('sequelize');
-var orm = new Sequelize('chat', 'root', '');	// database, username, password
+// var Sequelize = require('sequelize');
+// var orm = new Sequelize('chat', 'root', '');	// database, username, password
 
 // var User = orm.define('User', {
 // 	username: Sequelize.STRING

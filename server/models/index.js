@@ -8,7 +8,7 @@ module.exports = {
                       from messages left outer join users on (messages.userid = users.id) \
                       order by messages.id desc';
     	db.query(queryString, function(err, results) {
-    		callback(results);
+    		callback(err, results);
     	});
     }, // a function which produces all the messages
     post: function (params, callback) {
@@ -16,7 +16,7 @@ module.exports = {
     	var queryString = 'insert into messages(text, userid, roomname) \
                       value (?, (select id from users where username = ? limit 1), ?)';
     	db.query(queryString, params, function(err, results) {
-    		callback(results);
+    		callback(err, results);
     	});
     } // a function which can be used to insert a message into the database
   },
@@ -27,14 +27,14 @@ module.exports = {
     	// fetch all users
     	var queryString = 'select * from users';
     	db.query(queryString, function(err, results) {
-    		callback(results)
+    		callback(err, results)
     	})
     },
     post: function (params, callback) {
     	// create a user
     	var queryString = 'insert into users(username) values (?)';
     	db.query(queryString, params, function(err, results) {
-    		callback(results);
+    		callback(err,results);
     	});
     }
   }
