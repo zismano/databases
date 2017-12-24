@@ -7,7 +7,7 @@ module.exports = {
     	var queryString = 'select messages.id, messages.text, messages.roomname, users.username \
                       from messages left outer join users on (messages.userid = users.id) \
                       order by messages.id desc';
-    	db.query(queryString, params, function(err, results) {
+    	db.query(queryString, function(err, results) {
     		callback(results);
     	});
     }, // a function which produces all the messages

@@ -1,4 +1,3 @@
-// var utils = require('./utils.js');
 var express = require('express');
 var db = require('./db');
 

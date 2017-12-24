@@ -37,7 +37,7 @@
 --  *    mysql -u root < server/schema.sql
 --  *  to create the database and the tables.*/
  
- CREATE DATABASE chat;
+CREATE DATABASE chat;
 
 USE chat;
 
