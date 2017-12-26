@@ -10,14 +10,16 @@ var mongoClient = require('mongodb').MongoClient;
 
 // 27017 is the default port for connecting to MongoDB
 // test is the name of our database
-var url = 'mongodb://localhost:27017/test';
+var url = 'mongodb://localhost:27017/';
 
 // Open the client's connection to the server:
 mongoClient.connect(url, function(err, db) {
   console.log('Connected to MongoDB!');
+  
+  var dbase = db.db("test"); //here
 
   // Create a collection, if it doesn't exist already:
-  db.createCollection('demo-collection', function(err, collection) {
+  dbase.createCollection("demo-collection", function(err, collection) {
     console.log('Created collection');
 
     // Here's the document we want to insert:

@@ -7,7 +7,7 @@ var expect = require('chai').expect;
 
 describe('Persistent Node Chat Server', function() {
   // TODO edit this line if your database name is not "archive":
-  var dbName = 'archive';
+  var dbName = 'archived';
   var dbUrl = 'mongodb://localhost:27017/' + dbName;
 
   it('Should store requested documents in Mongo', function(done) {
@@ -33,7 +33,7 @@ describe('Persistent Node Chat Server', function() {
         mongoClient.connect(dbUrl, function(err, db) {
           /* TODO edit this variable to match the name of
            * the collection you're using: */
-          var collectionName = 'archive';
+          var collectionName = 'archived';
           db.createCollection(collectionName, function(err, collection) {
             collection.find().toArray(function(err, results) {
               // Should have one result:
@@ -56,7 +56,7 @@ describe('Persistent Node Chat Server', function() {
     mongoClient.connect(dbUrl, function(err, db) {
       /* TODO edit this variable to match the name of
        * the collection you're using: */
-      var collectionName = 'archive';
+      var collectionName = 'archived';
       db.createCollection(collectionName, function(err, collection) {
 
         /* We'll insert some fake page source data into
